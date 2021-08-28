@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- internet explore 브라우저에서 렌더링방식중에 IE=edge가 최신의 표준 모드로 렌더링 되도록 하는것 -->
+    <meta name="author" content="Sumin">
+    <meta name="description" content="GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <!-- initial-scale : 다양한 디바이스 초기화 화면의 비율을 조정 
+         user-scalable: no|yes : 사용자가 화면을 손가락으로 축소/확대 시 사용할 것인가 
+         mininum-scale/maxinum-scale : 사용자가 손가락으로 축소/확대 시 화면의 최소/최대 비율 -->
+    <title>GitHub</title>
+
+    <!-- og : Open Graph(일종의 정보)가 website이다 
+            외부의 다양한 사이트에서 og안에 content들을 가지고 가서 이 사이트는 어떤 사이트이다 확인해 간다 (Facebook에서 많이 사용) -->
+    <!-- http://ogp.me/ -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="GitHub">
+    <meta property="og:title" content="Build software better, together">
+    <meta property="og:description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta property="og:image" content="img/logo__github.png">
+    <meta property="og:url" content="https://github.com">
+
+    <!-- Twitter Card : 외부에 제공할 특정한 정보를 정의할 수 있도록 하는 것 (Twitter에서 많이 사용) -->
+    <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:site" content="GitHub">
+    <meta property="twitter:title" content="Build software better, together">
+    <meta property="twitter:description" content="GitHub clone coding / GitHub is where people build software. More than 31 million people use GitHub to discover, fork, and contribute to over 100 million projects.">
+    <meta property="twitter:image" content="img/logo__github.png">
+    <meta property="twitter:url" content="https://github.com">
+
+    <!-- 위 og,twitter는 카카오톡으로 공유시 미리보기에서 정보가 나타나게 된다. (외부사이트 공유시) -->
+
+    <!-- 링크태그로 파비콘을 가져온다 -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> 파비콘의 경로를 탐색해 본다. 하지만 루트경로에 파비콘 아이콘을 넣어두는 것을 권장함 -->
+    <link rel="stylesheet" href="./favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png"> <!-- 스마트폰 내에서 사용시  -->
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- css link -->
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <!-- reset파일을 인터넷에서 가져오자-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" />
+    <!-- ** 호출순서 **
+        외부에서 가져온 파일들을 라이브러리라고 하는데 이 파일들과 내가 작성할 파일들이 겹치는 경우가 발생할 수 있다.
+        그러므로 이런 라이브러리 파일들은 내가 작성한 파일보다 앞에 작성해야 한다  -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" media="all and (max-width: 1024px)" href="css/main_medium.css">
+    <link rel="stylesheet" media="(max-width:768px)" href="css/main_small.css">
+
+    <!-- defer : html을 모두 읽고 자바 실행 -->
+    <script defer src="main.js"></script>
+</head>
+<body>
+<!-- body태그 대신 사용 -->
+<div class="body__container">
+<!-- 언더바 두번?(__) : BEM(css 작명 규칙) -->
+<!-- *** '__ ~의 일부분이다 (구조적인 일부분) ***
+    ex)
+        <div class="container">
+            <div class="container__item"></div>
+        </div>
+        => container의 일부분인 item
+ -->
+ <!-- *** -- ~의 상태 ***
+    ex)
+        <div class="btn--success"></div>
+        <div class="btn--danger"></div>
+    => 이 버튼은 success시 사용하는 버튼
+-->
+<!-- *** - 일반적인 작명 통짜의 이름 ***
+    <div class="toggle-btn"> </div>
+-->
+
+    <!-- HEADER -->
+    <header class="section">
+        <div class="inner clearfix">
+
+            <div class="menu-group float--left">
+                <div class="logo">
+                    <a href="#">Github</a>
+                </div>
+                <ul class="main-menu toggle">
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Open source</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Explore</a></li>
+                </ul>
+            </div>
+            <!-- github 페이지에서 웹과 동적웹에서는 순서가 바뀌게 된다. 
+                이럴때는 동적웹에서의 순서대로 만든후 웹에서의 순서를 변경해 준다. -->
+            <div class="sign-group float--right toggle">
+                <div class="btn-group">
+                    <!-- 항목사이에 빈칸이 있는데 이것은 btn요소에서 inline-block을 줬기때문
+                        만약 이 곳의 속성을 별도로 조절하고 싶다면 btn-group에서 display를 flex값으로 주면 된다  -->
+                    <a href="#" class="btn sign-in">Sign in</a>
+                    <a href="#" class="btn btn--primary sign-up">Sign up</a>
+                </div>
+                <form id="search-form" method="POST" action="">
+                    <input type="text" id="search" class="input--text" placeholder="Search GitHub">
+                    <input type="submit" value="submit"> <!-- 화면에서 숨김 -->
+                </form>
+                <ul class="sub-menu">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+
+            <div id="toggle-btn">Header Menu Toggle Button</div>
+
+        </div>
+    </header>
+
+    <!-- VISUAL -->
+    <section class="section section--visual">
+        <div class="inner">
+
+            <div class="summary"> <!-- &nbsp; 특정한 단어를 연결해 주고 텍스트를 자연스럽게 연결할 수 있도록 설계할 수 있음 <br>태그는 권장하지 않는다 (동적웹페이지 때문 fixed해버림) -->
+                <h2 class="summary__title">How&nbsp;people build&nbsp;software</h2>
+                <p class="summary__description">Millions of developers use GitHub to build personal projects, support their
+                  businesses, and&nbsp;work together on open source technologies.</p>
+            </div>
+
+            <form action="" id="sign-form" method="POST" action="">
+                <ul>
+                    <li><input type="text" class="input--text" placeholder="Pick a username"></li>
+                    <li><input type="email" class="input--text" placeholder="Your email address"></li>
+                    <li>
+                        <input type="password" class="input--text" placeholder="Create a password">
+                        <p class="caption">Use at least one letter, one numeral, and seven characters.</p>
+                    </li>
+                    <li>
+                        <button type="submit" class="btn btn--primary">Sign up for GitHub</button> <!-- div, button, input 다 가능-->
+                        <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy.
+                            We'll occasionally send you account related emails.</p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </section>
+
+    <!-- FEATURE -->
+    <section class="section section--feature">
+        <div class="summary">
+            <h2 class="summary__title">Welcome home, developers</h2>
+            <p class="summary__description">GitHub fosters a fast, flexible, and collaborative development process that lets
+              you work on your own or with others.</p>
+        </div>
+        <div class="video">
+            <div class="video-ratio"> <!-- 반응형을 위한 div -->
+                <iframe width="1154" height="738" src="https://www.youtube.com/embed/afvT1c1ii0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="tiles">
+            <div class="inner">
+
+                <ul class="clearfix">
+                    <li>
+                      <img src="img/feature-tile__build.png" alt="build">
+                      <h3>For everything you build</h3>
+                      <p>Host and manage your code on GitHub. You can keep your work private or share it with the world.</p>
+                    </li>
+                    <li>
+                      <img src="img/feature-tile__work.png" alt="work">
+                      <h3>A better way to work</h3>
+                      <p>From hobbyists to professionals, GitHub helps developers simplify the way they build software.</p>
+                    </li>
+                    <li>
+                      <img src="img/feature-tile__projects.png" alt="projects">
+                      <h3>Millions of projects</h3>
+                      <p>GitHub is home to millions of open source projects. Try one out or get inspired to create your own.</p>
+                    </li>
+                    <li>
+                      <img src="img/feature-tile__platform.png" alt="platform">
+                      <h3>One platform, from start to finish</h3>
+                      <p>With hundreds of integrations, GitHub is flexible enough to be at the center of your development
+                        process.</p>
+                    </li>
+                  </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Where is -->
+    <section class="section section--where--is">
+        <div class="inner">
+            <div class="summary">
+                <h2 class="summary__title">Where is GitHub?</h2>
+                <p class="summary__description">GitHub is where people build software. More than 18 million people use GitHub to
+                  discover, fork, and contribute to over 48 million projects.</p>
+            </div>
+
+            <div id="map">
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing card -->
+    <section class="section section--pricing">
+        <div class="inner">
+            <div class="card">
+                <div class="cell cell1">
+                    <a href="#" class="btn btn--primary">Sign up for GitHub</a>
+                </div>
+                <div class="cell cell2">
+                    Public projects are always free. Work together across unlimited private repositories for $7 / month.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="section">
+        <div class="inner clearfix">
+
+            <ul class="site-links float--right">
+                <li><a href="#">Contact&nbsp;GitHub</a></li>
+                <li><a href="#">API</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+        
+              <ul class="site-links float--left">
+                <li>© 2016 GitHub, Inc.</li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Security</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">Help</a></li>
+              </ul>
+
+            <a href="#" class="logo">
+                <svg version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 16 16"
+                    fill="#ccc">
+                    <path fill-rule="evenodd"
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+
+        </div>
+    </footer>
+
+</div>
+<!-- 자바스크립트는 head, 마지막에 위치시킴 -->
+<script>
+    function initMap() {
+        const myLatLng = {
+            lat: 37.782293,
+            lng: -122.391240
+        }
+        const map = new google.maps.Map(
+            document.getElementById('map'),
+            {
+                center: myLatLng, /* 처음 보여줄때 위도 경도 */
+                scrollwheel: false,
+                zoom: 18 /* 지도를 보여줄때 어느정도까지의 zoom을 줄것인가 */
+            }
+        );
+        /* marker: 지도에서 마킹되는 곳 */
+        const marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'GitHub'
+        });
+
+    }
+</script>
+<!-- 자바스크립트 실행 async: 비동기, defer: html구조가 실행되면 이 스크립트가 실행되겠다-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTQIlxBn5AfKGvsfJiormAE1esN3fcCkg&callback=initMap" async defer></script>
+    
+</body>
+</html>

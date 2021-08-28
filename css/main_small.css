@@ -1,0 +1,55 @@
+/* COMMON */
+.summary__title {
+    font-size: 34px !important;
+}
+.summary__description {
+    font-size: 22px;
+}
+
+
+/* FEATURE */
+.section--feature .tiles li {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+/* WHERE IS */
+#map {
+    width: auto;
+    /* auto? 
+        inner클래스를 건드리지 않고 좌우가 20%씩 늘어났으면 좋겠다.
+        100% != auto
+        100%는 단순히 부모의 요소를 따라가는 것
+        auto는 초기화를 시키는 것
+    */
+    margin: 40px -20px 0 -20px;
+    border-left: none;
+    border-right: none;
+}
+
+
+/* PRICING */
+.section--pricing .card {
+    display: block;
+}
+.section--pricing .card .cell2 {
+    border-left: none;
+    border-top: 1px solid #e5e5e5;
+}
+
+
+/* FOOTER */
+footer .site-links {
+    float: none;
+    justify-content: center;
+}
+footer .site-links:first-child {
+    margin-bottom: 20px;
+}
+footer .site-links li {
+    display: inline;
+}
+
+
